@@ -18,7 +18,6 @@ Files
 A brief list and description of the important project files:
 
 * scripts/hexpixi.js -Contains the HexPixiJS library code.
-* scripts/hpdemo.js - This javascript code sets up the main demo page and serves as an example of how to use HexPixiJS.
 * simpleDemo.html - Demonstrates basic usage of library.
 * scripts/simpleDemo.js - Demonstrates basic usage of library.
 * simpleDemo2.html - Demonstrates advanced usage of library.
