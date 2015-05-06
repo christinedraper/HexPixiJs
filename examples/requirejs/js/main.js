@@ -1,9 +1,9 @@
 require.config({
     paths: {
-        'pixi': '../../shared/js/dep/pixi.min',
+        'pixi': '../../shared/bower_components/pixi.js/bin/pixi',
         'hexPixi': '../../../lib/hexPixi',
-        'simpleDemo': '../../shared/js/simpleDemo',
-        'simpleDemo2': '../../shared/js/simpleDemo2'
+        'simpleDemo': '../../shared/simpleDemo',
+        'simpleDemo2': '../../shared/simpleDemo2'
     }
 });
 
