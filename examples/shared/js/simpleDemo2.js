@@ -1,11 +1,22 @@
-﻿/// <reference path="vend/pixi.dev.js" />
-/// <reference path="hexpixi.js" />
-(function (window) {
+﻿/// <reference path="dep/pixi.dev.js" />
+/// <reference path="../../../lib/hexPixi.js" />
+
+(function(root, factory) {
+    if (typeof define == 'function' && define.amd) {
+        define(['pixi', 'hexPixi'], function (pixi, hexPixi) {
+            factory(root, pixi, hexPixi);
+        });
+    } else if (typeof exports == 'object') {
+        factory(root, require('pixi'), require('hexPixi'));
+    } else {
+        factory(root, root.PIXI, root.hexPixi)
+    }
+}(this, function(root, pixi, hexPixi) {
     'use strict';
-    var hp = window.HexPixi = window.HexPixi || {},
-        map = null,
-        stage = new PIXI.Stage(0xe0e0e0),
-        renderer = new PIXI.autoDetectRenderer(800, 600, {
+
+    var map = null,
+        stage = new pixi.Stage(0xe0e0e0),
+        renderer = new pixi.autoDetectRenderer(800, 600, {
             antialiasing: false,
             transparent: false,
             resolution: 1
@@ -35,12 +46,12 @@
             hexBottomPad: 24,
             onHexClick: onHexClick,
             textures: [
-                "images/game/tile/tileGrass.png",
-                "images/game/tile/tileSand.png",
-                "images/game/tile/tileDirt.png",
-                "images/game/tile/tileRock.png",
-                "images/game/tile/tileSnow.png",
-                "images/game/tile/tileWater.png"
+                "images/tile/tileGrass.png",
+                "images/tile/tileSand.png",
+                "images/tile/tileDirt.png",
+                "images/tile/tileRock.png",
+                "images/tile/tileSnow.png",
+                "images/tile/tileWater.png"
             ],
             terrainTypes: [
                 { name: "empty", color: 0xffffff, isEmpty: true },
@@ -51,7 +62,15 @@
                 { name: "snow", tileIndex: 4, color: 0xe2e2fa },
                 { name: "water", tileIndex: 5, color: 0x4060fa }
             ],
-            onAssetsLoaded: function () { requestAnimFrame(animate); }
+            onAssetsLoaded: function () {
+                try{
+                    renderer.render(stage);
+                    animate();
+                }
+                catch (e){
+                    console.error(e);
+                }
+            }
         }
     }
 
@@ -60,7 +79,7 @@
         var div = document.getElementById('stage');
         div.appendChild(renderer.view);
 
-        map = new hp.Map(stage, getOptions());
+        map = new hexPixi.Map(stage, getOptions());
     }
 
     function initPage() {
@@ -69,4 +88,4 @@
     }
 
     initPage();
-}(window));
+}));
