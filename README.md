@@ -1,6 +1,6 @@
 HexPixiJs
 =========
-Basic Hex Grid For PixiJS. Version 0.41 (alpha).
+Basic Hex Grid For PixiJS. Version 0.45 (alpha).
 
 HexPixiJs is a simple library written to give hex grid based game developers a jump start. This library will be updated periodically but there is currently no roadmap of features. Feel free to request features.
 
@@ -15,9 +15,9 @@ I realize there is a CORS (cross origin resource sharing) issue if you are tryin
 
 Examples
 -----
-[Browser Examples](https://github.com/mark-harmon/HexPixiJs/tree/master/examples/browser)
+[Browser Examples](https://github.com/alforno-productions/HexPixiJs/tree/master/examples/browser)
 
-[RequireJS Examples](https://github.com/mark-harmon/HexPixiJs/tree/master/examples/requirejs)
+[RequireJS Examples](https://github.com/alforno-productions/HexPixiJs/tree/master/examples/requirejs)
 
 Demo
 ----
