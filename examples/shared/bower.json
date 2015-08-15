@@ -1,0 +1,9 @@
+{
+  "name": "HexPixiJs-examples",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "pixi.js": "2.2.9",
+    "requirejs": "~2.1.17"
+  }
+}

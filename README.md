@@ -13,16 +13,11 @@ Troubleshooting
 ---------------
 I realize there is a CORS (cross origin resource sharing) issue if you are trying to view this without a webserver. In otherwords, if you download the files and double click index.html, the texture might not load.
 
-Files
+Examples
 -----
-A brief list and description of the important project files:
+[Browser Examples](https://github.com/mark-harmon/HexPixiJs/tree/master/examples/browser)
 
-* scripts/hexpixi.js -Contains the HexPixiJS library code.
-* scripts/hpdemo.js - This javascript code sets up the main demo page and serves as an example of how to use HexPixiJS.
-* simpleDemo.html - Demonstrates basic usage of library.
-* scripts/simpleDemo.js - Demonstrates basic usage of library.
-* simpleDemo2.html - Demonstrates advanced usage of library.
-* scripts/simpleDemo2.js - Demonstrates advanced usage of library.
+[RequireJS Examples](https://github.com/mark-harmon/HexPixiJs/tree/master/examples/requirejs)
 
 Demo
 ----
