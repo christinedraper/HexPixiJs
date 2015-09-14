@@ -15,7 +15,7 @@
     'use strict';
 
     var map = null,
-        stage = new pixi.Stage(0xe0e0e0),
+        stage = new pixi.Container(),
         renderer = new pixi.autoDetectRenderer(800, 600, {
             antialiasing: false,
             transparent: false,
