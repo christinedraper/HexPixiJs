@@ -1,4 +1,4 @@
-﻿/// <reference path="dep/pixi.dev.js" />
+﻿﻿/// <reference path="dep/pixi.dev.js" />
 /// <reference path="../../../lib/hexPixi.js" />
 
 (function(root, factory) {
@@ -22,8 +22,10 @@
             resolution: 1
         });
 
+    renderer.backgroundColor = 0xFFFFFF;
+
     function animate() {
-        root.requestAnimFrame(animate);
+        window.requestAnimationFrame(animate);
         // render the stage
         renderer.render(stage);
     }
