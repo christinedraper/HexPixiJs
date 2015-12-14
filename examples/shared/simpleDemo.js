@@ -9,7 +9,7 @@
     } else if (typeof exports == 'object') {
         factory(root, require('pixi'), require('hexPixi'));
     } else {
-        factory(root, root.PIXI, root.hexPixi)
+        factory(root, root.PIXI, root.hexPixi);
     }
 }(this, function(root, pixi, hexPixi) {
     'use strict';
@@ -55,7 +55,7 @@
                     console.error(e);
                 }
             }
-        }
+        };
     }
 
     function setupPixiJs() {
@@ -63,7 +63,6 @@
         var div = document.getElementById('stage');
         div.appendChild(renderer.view);
 
-        //root.requestAnimFrame(animate);
         map = new hexPixi.Map(stage, getOptions());
     }
 
