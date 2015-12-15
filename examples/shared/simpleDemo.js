@@ -1,4 +1,4 @@
-﻿/// <reference path="dep/pixi.dev.js" />
+﻿﻿/// <reference path="dep/pixi.dev.js" />
 /// <reference path="../../../lib/hexPixi.js" />
 
 (function(root, factory) {
@@ -9,21 +9,23 @@
     } else if (typeof exports == 'object') {
         factory(root, require('pixi'), require('hexPixi'));
     } else {
-        factory(root, root.PIXI, root.hexPixi)
+        factory(root, root.PIXI, root.hexPixi);
     }
 }(this, function(root, pixi, hexPixi) {
     'use strict';
 
     var map = null,
-        stage = new pixi.Stage(0xe0e0e0),
+        stage = new pixi.Container(),
         renderer = new pixi.autoDetectRenderer(800, 600, {
             antialiasing: false,
             transparent: false,
             resolution: 1
         });
 
+    renderer.backgroundColor = 0xFFFFFF;
+
     function animate() {
-        root.requestAnimFrame(animate);
+        window.requestAnimationFrame(animate);
         // render the stage
         renderer.render(stage);
     }
@@ -53,7 +55,7 @@
                     console.error(e);
                 }
             }
-        }
+        };
     }
 
     function setupPixiJs() {
@@ -61,7 +63,6 @@
         var div = document.getElementById('stage');
         div.appendChild(renderer.view);
 
-        //root.requestAnimFrame(animate);
         map = new hexPixi.Map(stage, getOptions());
     }
 

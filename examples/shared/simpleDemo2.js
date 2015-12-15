@@ -9,13 +9,13 @@
     } else if (typeof exports == 'object') {
         factory(root, require('pixi'), require('hexPixi'));
     } else {
-        factory(root, root.PIXI, root.hexPixi)
+        factory(root, root.PIXI, root.hexPixi);
     }
 }(this, function(root, pixi, hexPixi) {
     'use strict';
 
     var map = null,
-        stage = new pixi.Stage(0xe0e0e0),
+        stage = new pixi.Container(0xe0e0e0),
         renderer = new pixi.autoDetectRenderer(800, 600, {
             antialiasing: false,
             transparent: false,
@@ -29,7 +29,7 @@
     }
 
     function animate() {
-        requestAnimFrame(animate);
+        requestAnimationFrame(animate);
         // render the stage
         renderer.render(stage);
     }
@@ -71,7 +71,7 @@
                     console.error(e);
                 }
             }
-        }
+        };
     }
 
     function setupPixiJs() {
